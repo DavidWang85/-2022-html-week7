@@ -1,0 +1,224 @@
+//HEADER
+.header{
+    padding-top: 12px;
+    padding-bottom: 12px;
+    background: $color-primary-0601;
+    position: relative;
+}
+.logo{
+    width: 80px;
+    height: 50px;
+    display: block;
+    background-image: url(https://raw.githubusercontent.com/hexschool/2022-web-layout-training/main/week3-4/logo-white.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    text-indent: 101%;
+    white-space: nowrap;
+    overflow: hidden;
+}
+.menu{
+    &-link{
+        padding-left: 32px;
+        padding-right: 32px;
+        color: $color-light;
+        font-size: $h5-font-size;
+        &:hover{
+            opacity: 0.8;
+        }
+    }
+    li:nth-child(4) {
+        a {
+            padding-right: 0;
+        }
+    }
+    @include mb{
+        display: none;
+    }
+}
+.ham-icon{
+    display: none;
+    color: $color-light;
+    @include mb{
+        width: 30px;
+        height: 20px;
+        display: block;
+    }
+    .ham.active {
+        display: none;
+    }
+    .close {
+        display: none;
+    }
+    .close.active {
+        display: inline-block;
+    }
+}
+.dropdown{
+    position: absolute;
+    right: 0;
+    top: 100%;
+    width: 100%;
+    max-height: 0px;
+    transition: all 0.8s;
+    overflow: hidden;
+    z-index: 120;
+    &.active {
+        @include mb{
+            max-height: 200px;
+        }
+    }
+    a{
+        width: 100%;
+        background: $color-primary-0601;
+        display: block;
+        margin-top: 1px;
+        margin-bottom: 1px;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        text-align: center;
+        color: $color-light;
+        &:hover{
+            background: #8f0400;
+        }
+    }
+}
+
+//FOOTER
+.footer{
+    padding-top: 48px;
+    padding-bottom: 40px;
+    background: $color-primary-0601;
+    @include mb{
+        padding-top: 24px;
+        padding-bottom: 16px;
+    }
+    &-content{
+        border-bottom: 1px solid $color-light;
+        margin-bottom: 32px;
+        @include mb{
+            display: flex;
+            flex-direction: row-reverse;
+            align-items: start;
+        }
+    }
+    &-links{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 24px;
+    }
+    &-menu{
+        display: flex;
+        justify-content: space-between;
+        margin-left: -24px;
+        margin-right: -24px;
+        &-item{
+            padding-right: 24px;
+            padding-left: 24px;
+            color: $color-light;
+            display: block;
+            &:hover{
+                opacity: 0.8;
+            }
+        }
+        @include mb{
+            display: none;
+        }
+    }
+    &-linkicon{
+        display: flex;
+        justify-content: space-between;
+        li:nth-child(3) {
+            padding-right: 0;
+        }
+        &-item{
+            padding-left: 16px;
+            padding-right: 16px;
+        }
+        a{
+            &:hover{
+                opacity: 0.8;
+            }
+        }
+        &-img{
+            width: 48px;
+            height: 48px;
+            @include mb{
+                width: 24px;
+                height: 24px;
+            }
+        }
+    }
+    &-directions{
+        display: flex;
+        justify-content: space-between;
+        @include mb{
+            flex-direction: column;
+        }
+        .copyright{
+            color: $color-light;
+            @include mb{
+                margin-bottom: 8px;
+            }
+        }
+        .policy{
+            display: flex;
+            justify-content: space-between;
+            @include mb {
+                flex-direction: column;
+            }
+            &-item{
+                color: $color-light;
+                padding-left: 24px;
+                padding-right: 24px;
+                @include mb {
+                    padding: 0;
+                    margin-bottom: 8px;
+                }
+                &:hover{
+                    opacity: 0.8;
+                }
+            }
+            li:nth-child(1) {
+                a {
+                    padding-left: 0;
+                }
+            }
+            li:nth-child(2) {
+                a{
+                    padding-right: 0;
+                }
+            }
+        }
+    }
+}
+.contract{
+    margin-bottom: 24px;
+    @include mb{
+        margin-bottom: 16px;
+    }
+    &-item{
+        margin-bottom: 8px;
+        display: flex;
+        align-items: center;
+        span{
+            color: $color-light;
+            margin-right: 20px;
+            font-size: $font-size-md;
+            @include mb{
+                margin-right: 10px;
+                font-size: $font-size-base;
+            }
+        }
+        a{
+            font-size: $font-size-md;
+            color: $color-light;
+            @include mb{
+                font-size: $font-size-base;
+            }
+            &:hover{
+                opacity: 0.8;
+            }
+        }
+    }
+}
